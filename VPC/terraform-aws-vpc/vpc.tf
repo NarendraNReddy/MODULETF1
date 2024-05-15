@@ -28,19 +28,19 @@ resource "aws_internet_gateway" "gw" {
   
 }
 
-#public subnet
-resource "aws_subnet" "public" {
-  count=  length(var.public_subnet_cidrs)
-  vpc_id     = aws_vpc.main.id
-  #cidr_block = "10.0.1.0/24"
-  cidr_block = var.public_subnet_cidrs[count.index]
+# #public subnet
+# resource "aws_subnet" "public" {
+#   count=  length(var.public_subnet_cidrs)
+#   vpc_id     = aws_vpc.main.id
+#   #cidr_block = "10.0.1.0/24"
+#   cidr_block = var.public_subnet_cidrs[count.index]
 
-  tags = merge(
-    var.common_tags,
-    var.public_subnet_cidr_tags,
-    {
-        Name=local.resource_name #expense-public-us-east-1a
-                                 # expense-public-us-east-1b
-    }
-  )
-}
+#   tags = merge(
+#     var.common_tags,
+#     var.public_subnet_cidr_tags,
+#     {
+#         Name=local.resource_name #expense-public-us-east-1a
+#                                  # expense-public-us-east-1b
+#     }
+#   )
+# }

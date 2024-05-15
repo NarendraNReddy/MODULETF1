@@ -13,7 +13,7 @@ variable "common_tags" {
 }
 
 
-#subnet
+# #subnet
 
 # variable "public_subnet_cidr_tags" {
 #   default = {}

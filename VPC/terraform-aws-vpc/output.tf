@@ -1,3 +1,7 @@
+# output "azs" {
+#   value=data.aws_availability_zone.zones
+# }
+
 output "azs" {
-  value=data.aws_availability_zone.zones
+  value = data.aws_availability_zones.available.names
 }
